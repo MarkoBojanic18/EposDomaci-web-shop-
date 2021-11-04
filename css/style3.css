@@ -1,0 +1,131 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: Poppins, sans-serif;
+    font-size: 10px;
+    box-sizing: border-box;
+    background-color: #3c4053;
+}
+
+#head {
+    text-align: center;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: #3c4053;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Poppins, sans-serif;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+section h1 {
+    font-size: 40px;
+    margin-bottom: 5%;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+section p {
+    text-shadow: 2px 2px black;
+}
+
+#undertitle {
+    font-size: 20px;
+    margin: 5% 15%;
+    color: white;
+    align-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+
+}
+
+.accordion-item {
+    background-color: #283042;
+    border-radius: .4rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: .5rem 2px .5rem rgba(0, 0, 0, .1);
+}
+
+.accordion-link {
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, .8);
+    text-decoration: none;
+    background-color: #283042;
+    width: 100%;
+    display: flex;
+
+}
+
+.accordion-link i {
+    color: #e7d5ff;
+    padding: .5rem;
+
+}
+
+.accordion-link .ion-md-remove {
+    display: none;
+}
+
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    position: relative;
+    background-color: #212838;
+    transition: max-height 950ms;
+
+}
+
+.answer::before {
+    content: "";
+    position: absolute;
+    width: .7rem;
+    height: 90%;
+    background-color: #8fc460;
+    top: 5%;
+    left: 0;
+    transform: translate(-50%);
+
+
+}
+
+.answer p {
+    color: rgba(255, 255, 255, .6);
+    font-size: 1.4rem;
+    padding: 2rem;
+}
+
+/* ovo je za click event */
+.accordion-item:target .answer {
+    max-height: 20rem;
+}
+
+/* kada kliknem na accordion-item : nestaje + */
+.accordion-item:target .accordion-link .ion-md-add {
+    display: none;
+}
+
+/* kada kliknem na accordion-item : pojavljuje se - */
+.accordion-item:target .accordion-link .ion-md-remove {
+    display: block;
+}
